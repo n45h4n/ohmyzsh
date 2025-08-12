@@ -172,9 +172,10 @@ setopt NO_CASE_GLOB  # case-insensitive globbing
 if command -v brew >/dev/null 2>&1; then
   FZF_SHELL="$(brew --prefix)/opt/fzf/shell"
   [ -f "$FZF_SHELL/completion.zsh" ]   && source "$FZF_SHELL/completion.zsh"
-  [ -f "$FZF_SHELL/key-bindings.zsh" ] && source "$FZF_SHELL/key-bindings.zsh"
+  [ -f "$FZF_SHELL/key-bindings.zsh" ] && source "$fZF_SHELL/key-bindings.zsh"
 fi
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+# [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+bindkey '^I' expand-or-complete
 
 # =============================
 # Grep / diff color
